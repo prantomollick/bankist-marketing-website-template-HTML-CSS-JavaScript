@@ -30,6 +30,7 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
+/*
 ////////////////////////////////////////////////
 ////
 
@@ -68,5 +69,70 @@ headerEl.append(messageEl);
 //Delete Elements
 document.querySelector('.btn--close--cookie').addEventListener('click', () => {
   // messageEl.remove();
-  // messageEl.parentElement.removeChild(messageEl);
+  messageEl.parentElement.removeChild(messageEl);
+});
+
+//styles
+messageEl.style.backgroundColor = '#37383d';
+messageEl.style.width = '120%';
+
+console.log(messageEl.style.color);
+console.log(messageEl.style.backgroundColor);
+
+console.log(getComputedStyle(messageEl).color);
+console.log(getComputedStyle(messageEl).height);
+
+messageEl.style.height =
+  parseFloat(getComputedStyle(messageEl).height) + 30 + 'px';
+
+document.documentElement.style.setProperty('--color-primary', 'orangeRed');
+
+//Attributes
+const logo = document.querySelector('.nav__logo');
+console.log(logo);
+console.log(logo.alt);
+console.log(logo.src);
+console.log(logo.className);
+
+logo.alt = 'Beautiful minimalist logo';
+
+//Non-standard
+console.log(logo.designer);
+console.log(logo.getAttribute('designer'));
+logo.setAttribute('company', 'Bankist');
+console.log(logo.getAttribute('src'));
+//Data attribute
+console.log(logo.dataset.versionNumber);
+
+//Classes
+logo.classList.add('s');
+logo.classList.remove('s');
+logo.classList.toggle('s');
+logo.classList.contains('s');
+*/
+
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+
+btnScrollTo.addEventListener('click', function (e) {
+  const s1coords = section1.getBoundingClientRect();
+  console.log(s1coords);
+  console.log('Current scroll (X/Y)', scrollX, scrollY);
+
+  //dimentions of this viewport
+  console.log(
+    'Height/Width viewport',
+    document.documentElement.clientHeight,
+    document.documentElement.clientWidth
+  );
+
+  // window.scrollTo(s1coords.left + scrollX, s1coords.top + scrollY);
+
+  // window.scrollTo({
+  //   left: s1coords.left + scrollX,
+  //   top: s1coords.top + scrol lY,
+  //   behavior: 'smooth',
+  // });
+
+  section1.scrollIntoView({ behavior: 'smooth' });
 });
