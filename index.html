@@ -4,9 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   <link rel="shortcut icon" type="image/png" href="img/icon.png" />
-
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <title>Bankist | When Banking meets Minimalist</title>
@@ -290,7 +289,8 @@
     <img src="img/icon.png" alt="Logo" class="footer__logo" />
     <p class="footer__copyright">
       &copy; Copyright by
-      <a class="footer__link twitter-link" target="_blank" href="https://twitter.com/jonasschmedtman">Jonas
+      <a rel="noopener" class="footer__link twitter-link" target="_blank"
+        href="https://twitter.com/jonasschmedtman">Jonas
         Schmedtmann</a>. Use for learning or your portfolio. Don't use to teach. Don't claim
       as your own product.
     </p>
@@ -303,13 +303,13 @@
       in just <span class="highlight">5 minutes</span>
     </h2>
     <form class="modal__form">
-      <label>First Name</label>
-      <input type="text" />
-      <label>Last Name</label>
-      <input type="text" />
-      <label>Email Address</label>
-      <input type="email" />
-      <button class="btn">Next step &rarr;</button>
+      <label for="first-name">First Name</label>
+      <input type="text" id="first-name" />
+      <label for="last-name">Last Name</label>
+      <input type="text" id="last-name" />
+      <label for="email">Email Address</label>
+      <input type="email" id="email" />
+      <button type="button" class="btn">Next step &rarr;</button>
     </form>
   </div>
   <div class="overlay hidden"></div>
